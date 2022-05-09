@@ -25,7 +25,7 @@ public class ServerTCP
 	            try {
 	            	System.out.println("Waiting for a client ...");
 
-	    			socket = server.accept();
+	    			socket = server.accept();//returns socket and establish connection
 	    			System.out.println("Client "+i+" accepted");
 	                
 	                ServerThread st = new ServerThread(socket,"Client "+String.valueOf(i));
