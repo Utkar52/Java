@@ -1,7 +1,7 @@
 import mpi.MPI;
 public class MPI1{ 
 public static void main(String[] args) { 
-MPI.Init(args); 
+MPI.Init(args); //receives command line argument
 int root = 0; 
 int rank = MPI.COMM_WORLD.Rank(); 
 int size = MPI.COMM_WORLD.Size(); 
@@ -11,7 +11,7 @@ initBuffer(rank, root, buffer);
 scatterData(rank, root, buffer, processBuffer); 
 processData(rank, processBuffer); 
 gatherData(rank, root, buffer, processBuffer); 
-MPI1.Finalize(); 
+MPI1.Finalize(); //shut down mpi method
 } 
 private static void initBuffer(int rank, int root, double[] inputBuffer) { 
 if (rank == root) { 
