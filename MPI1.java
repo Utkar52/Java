@@ -21,7 +21,8 @@ inputBuffer[2] = 30;
 inputBuffer[3] = 40; 
 } 
 } 
-private static void scatterData(int rank, int root, double[] buffer, double[] processBuffer) { 
+private static void scatterData(int rank, int root, double[] buffer, double[] processBuffer) //scatters data into multiple memory locations
+{ 
 if (rank == root) { 
 print("Scatter Data : "); 
 for (double j : buffer) { 
@@ -36,7 +37,8 @@ double output = input / 3.281;
 print("Processing Data " + rank + " Input Feet : " + input + " Output Metres : " + output + "\n"); 
 receiveBuffer[0] = output; 
 }
-private static void gatherData(int rank, int root, double[] buffer, double[] processBuffer) { 
+private static void gatherData(int rank, int root, double[] buffer, double[] processBuffer)//gatters the scattered data
+{ 
 MPI.COMM_WORLD.Gather(processBuffer, 0, 1, MPI.DOUBLE, buffer, 0, 1, MPI.DOUBLE, root); 
 if (rank == root) { 
 print("Gather Data : "); 
