@@ -10,7 +10,7 @@ public class Bully{
     public static void main(String args[])throws IOException
     {
         System.out.println("Enter the number of process");
-        Scanner in = new Scanner(System.in);
+        Scanner in = new Scanner(System.in);//scans the input
         n = in.nextInt();
          
         int i;
